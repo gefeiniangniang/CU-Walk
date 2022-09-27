@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@5.2.3/dist/amazon-cognito-identity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<body>
+<div id="Username"></div>
+<div id="Email"></div>
+<div id="redirectMessage"></div>
+</body>
+</html>
+<script>
+    // https://stackoverflow.com/questions/179355/clearing-all-cookies-with-javascript
+    function deleteAllCookies() {
+        var cookies = document.cookie.split(";");
+        console.log(cookies)
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        }
+    }
+
+    // https://github.com/amazon-archives/amazon-cognito-auth-js/issues/68
+    // https://stackoverflow.com/questions/10812628/open-a-new-tab-in-the-background
+    console.log(window.location.href);
+    if (window.location.href ===
+        "https://6998frontendtest.s3.amazonaws.com/cognitoRedirect.html#" +
+        "error_description=PreSignUp+failed+with+error+Please_use_Email_of_Columbia_University_to_log_in." +
+        "+&error=invalid_request") {
+        deleteAllCookies();
+        window.location.assign("https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=" +
+            "https://6998frontendtest.s3.amazonaws.com/redirecttomainpage.html");
+    } else {
+        // https://aws-serverless-web-application.readthedocs.io/en/latest/step11.html
+        var idToken = window.location.href.split("id_token=")[1].split("&")[0];
+        var accessToken = window.location.href.split("access_token=")[1].split("&")[0];
+        console.log(idToken);
+        console.log("access:")
+        console.log(accessToken);
+        window.location.assign("https://6998frontendtest.s3.amazonaws.com/profile.html");
+        localStorage.setItem("idToken",idToken);
+        console.log(localStorage.getItem("idToken"));
+        localStorage.setItem("accessToken",accessToken);
+        console.log(localStorage.getItem("accessToken"));
+        // $.ajax({
+        //     url: "https://k9wj046mrd.execute-api.us-east-1.amazonaws.com/6998FirstTry/login" + "?accessToken=" + accessToken,
+        //     headers: {"Token": idToken},
+        //     type: 'GET',
+        //     cache: false,
+        //     processData: false,
+        //     contentType: 'application/json',
+        //     success: function (r) {
+        //         document.getElementById('Username').innerHTML = "Username: " + r.Username;
+        //         document.getElementById('Email').innerHTML = "Email: " + r.Email;
+        //         window.location.assign("https://6998frontendtest.s3.amazonaws.com/profile.html");
+        //         console.log(r);
+        //     }
+        // })
+    }
+
+</script>

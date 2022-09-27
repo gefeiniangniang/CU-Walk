@@ -1,0 +1,226 @@
+body{
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(19, 35, 96),rgba(25, 99, 166));
+}
+
+/*input{*/
+/*    background-color: powderblue;*/
+/*    border-color: powderblue;*/
+/*}*/
+
+/*select{*/
+/*    background-color: powderblue;*/
+/*    border-color: powderblue;*/
+/*}*/
+
+#query_string{
+    border-radius: 8px;
+    height: 40px;
+    width: 400px; 
+    border: 1px solid white;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* need to add mobil for container */
+#container{
+    padding: 20px;
+    margin: auto;
+    border-radius: 8px;
+    height: 250px;
+    width: 400px;
+    background-color: powderblue;
+}
+
+#submit_button {
+    border-radius: 8px;
+    height: 40px; 
+    width: 400px;
+    background-color: white; 
+    color: rgba(19, 35, 96);
+}
+#create_button{
+    border-radius: 8px;
+    height: 40px; 
+    width: 400px;
+    background-color: white; 
+    color: rgba(19, 35, 96);
+}
+#subtitle{
+    margin:auto;
+    margin-bottom:30px;
+    border-radius: 10px;
+    height: 60px;
+    width: 400px;
+    background-color: powderblue;
+    box-shadow: 4px 4px;
+    text-align: center;
+}
+#subtitle1{
+    margin:auto;
+    margin-bottom:30px;
+    border-radius: 10px;
+    height: 120px;
+    width: 400px;
+    background-color: powderblue;
+    box-shadow: 4px 4px;
+    text-align: center;
+    padding-top: 30px;
+}
+#subtitle2{
+    margin:auto;
+    margin-bottom:30px;
+    border-radius: 10px;
+    height: 120px;
+    width: 400px;
+    background-color: powderblue;
+    box-shadow: 4px 4px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+h1{
+  color: rgb(23, 23, 216);
+  text-align: center;
+  line-height:51px;
+  vertical-align:middle;
+  margin:auto;
+  font-size: x-large;
+  font-weight: bold;
+  /* text-align: center; */
+  /* margin-top: 20px; */
+}
+
+#lion {
+    margin: -40px;
+    width:300px;
+    height:450px;
+}
+
+#welcome{
+    margin-top: -10px;
+    color: white;
+    font-size: 50px;
+    font-family: Arial;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}
+
+#description{
+    margin-bottom: -40px;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: rgb(184, 181, 181);
+    font-size: 20px;
+    font-family: Arial;
+    /* font-weight: bold; */
+
+}
+
+@media only screen and (max-width: 1024px) {
+    html,body {
+        margin-top: 100px;
+        /* height: 100%; */
+    }
+
+
+    #lion {
+        width:450px;
+        height:650px;
+        margin: 20px;
+    }
+
+    #logo {
+        width:280px !important;
+        height:240px !important;
+    }
+
+    #query_string, #submit_button {
+        width: 700px;
+        height: 80px;
+        font-size: 40px;
+    }
+
+    #create_button{
+        width: 700px;
+        height: 80px;
+        font-size: 40px;
+        background-color: white;
+    }
+
+    #ready, #cancel{
+        width: 350px;
+        height:80px;
+        font-size: 40px;
+    }
+
+    #container{
+        margin: auto;
+        border-radius: 8px;
+        min-height: 500px;
+        min-width: 70%;
+        background-color: powderblue;
+        font-size: 35px;
+        padding: 20px;
+        line-height: 40px;
+    }
+
+    #subtitle{
+        margin:auto;
+        margin-bottom:30px;
+        border-radius: 10px;
+        height: 60px;
+        width: 70%;
+        background-color: powderblue;
+        box-shadow: 4px 4px;
+    }
+    #subtitle1{
+        margin:auto;
+        margin-bottom:30px;
+        border-radius: 10px;
+        height: 120px;
+        width: 70%;
+        background-color: powderblue;
+        box-shadow: 4px 4px;
+    }
+    #subtitle2{
+        margin:auto;
+        margin-bottom:30px;
+        border-radius: 10px;
+        height: 120px;
+        width: 70%;
+        background-color: powderblue;
+        box-shadow: 4px 4px;
+    }
+    
+    h1{
+      color: rgb(23, 23, 216);
+      text-align: center;
+      line-height:51px;
+      vertical-align:middle;
+      margin:auto;
+      font-size: x-large;
+      font-weight: bold;
+    }
+
+    #welcome{
+        color: white;
+        font-size: 60px;
+        font-family: Arial;
+        font-weight: bold;
+        text-shadow: 2px 2px black;
+    }
+
+    #description{
+        padding-left: 20%;
+        padding-right: 20%;
+        padding-bottom: 30px;
+        color: rgb(184, 181, 181);
+        font-size: 35px;
+        font-family: Arial;
+        /* font-weight: bold; */
+    
+    }
+}
